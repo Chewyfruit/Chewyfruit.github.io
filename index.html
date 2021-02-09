@@ -10370,7 +10370,7 @@ Error message and password prompt
 <div created="20201226094827007" modified="20201226094827007" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201226040229699" modified="20210209113303600" title="$:/state/sidebar">
+<div created="20201226040229699" modified="20210209113611745" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20201226114443739" modified="20201226114615520" title="$:/state/tab--1963855381">
@@ -10385,13 +10385,13 @@ Error message and password prompt
 <div created="20210209101116231" modified="20210209104027971" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20201226040229700" modified="20210209113303601" title="$:/state/tab/sidebar--595412856">
+<div created="20201226040229700" modified="20210209113611746" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210209111426281" list="Checkapp Food" modified="20210209113245020" title="$:/StoryList">
+<div created="20210209111426281" list="Checkapp Food" modified="20210209113602413" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201226114254558" modified="20201226114440522" title="$:/theme">
@@ -10917,7 +10917,7 @@ Remove COPY tag from all cards
 [[btn Delete Cards]]
 </pre>
 </div>
-<div created="20201114085731300" modified="20210209104303153" tags="DOC" title="Food">
+<div created="20201114085731300" modified="20210209113447167" tags="DOC" title="Food">
 <pre>&lt;$button&gt;
 &lt;$list variable=cur_card filter=&quot;[prefix[Food\]]&quot;&gt;
 &lt;$action-setfield $tiddler=&lt;&lt;cur_card&gt;&gt; at-home=&quot;no&quot;/&gt;
@@ -11384,10 +11384,12 @@ Rem to browse: &lt;$list filter=&quot;[{$ur_temp_remcounter_pk$}]&quot;&gt;&lt;/
 \end
 </pre>
 </div>
-<div created="20210209100649066" modified="20210209101505428" tags="MCR $:/tags/Macro" title="mcr glbl_food_checkbox">
+<div created="20210209100649066" modified="20210209113543063" tags="MCR $:/tags/Macro" title="mcr glbl_food_checkbox">
 <pre>\define glbl_food_checkbox()
 &lt;$list variable=cur_card filter=&quot;[[$(cur_card)$]]&quot;&gt;
-&lt;$checkbox default=&quot;no&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;at-home&quot; tiddler=&lt;&lt;cur_card&gt;&gt;&gt;&lt;span style=&quot;padding-right:20px&quot; /&gt;&lt;/$checkbox&gt; &lt;$link to=&lt;&lt;cur_card&gt;&gt; /&gt;
+&lt;$list variable=card_title filter=&quot;[&lt;cur_card&gt;split[\]last[]]&quot;&gt;
+&lt;$checkbox default=&quot;no&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;at-home&quot; tiddler=&lt;&lt;cur_card&gt;&gt;&gt;&lt;span style=&quot;padding-right:20px&quot; /&gt;&lt;/$checkbox&gt; &lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;card_title&gt;&gt;&lt;/$link&gt;
+&lt;/$list&gt;&lt;!--card_title--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 \end
 </pre>
