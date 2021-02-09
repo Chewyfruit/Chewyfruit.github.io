@@ -10217,7 +10217,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Panel]]</pre>
+# [[DivPop glbl]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10234,7 +10234,7 @@ Error message and password prompt
 <div created="20201226094827007" modified="20201226094827007" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201226040229699" modified="20210209092244779" title="$:/state/sidebar">
+<div created="20201226040229699" modified="20210209093919815" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20201226114443739" modified="20201226114615520" title="$:/state/tab--1963855381">
@@ -10246,13 +10246,13 @@ Error message and password prompt
 <div created="20210209084939435" modified="20210209084939435" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20201226040229700" modified="20210209092244779" title="$:/state/tab/sidebar--595412856">
+<div created="20201226040229700" modified="20210209093919815" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210209091729423" list="$:/Import [[Notes Wiki]] Panel" modified="20210209092239085" title="$:/StoryList">
+<div created="20210209092347936" list="[[Notes Wiki]] Panel" modified="20210209093911028" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201226114254558" modified="20201226114440522" title="$:/theme">
@@ -10414,8 +10414,8 @@ Del ARTICLE and IMG cards
 &lt;$macrocall $name=divpop_current ur_ref=&lt;&lt;currentTiddler&gt;&gt; /&gt; 
 &lt;/$list&gt;</pre>
 </div>
-<div created="20200418110049404" modified="20201226040306586" tags="$:/tags/BelowStory META" title="DivPop glbl">
-<pre>&lt;$list filter=&quot;[{$:/state/popup/DivPopTitle}is[tiddler]]&quot;&gt;
+<div created="20200418110049404" modified="20210119040744696" tags="$:/tags/BelowStory META" title="DivPop glbl">
+<pre>&lt;$list variable=cur_divpop_card filter=&quot;[{$:/state/popup/DivPopTitle}is[tiddler]]&quot;&gt;
 &lt;div style=&quot;
 position: fixed;
 top: 0px;
@@ -10431,9 +10431,17 @@ bottom: 0%;
 &lt;$action-setfield $tiddler=&quot;$:/state/popup/DivPopTitle&quot; text=&quot;&quot;/&gt;
 close
 &lt;/$button&gt;
-&lt;$tiddler tiddler=&lt;&lt;currentTiddler&gt;&gt; &gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;$reveal type=&quot;match&quot; state=&quot;$:/state/popup/$ur_pk$&quot; text=&quot;show&quot;&gt;&lt;$button set=&quot;$:/state/popup/$ur_pk$&quot; setTo=&quot;hide&quot;&gt;show&lt;/$button&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;$link to=&lt;&lt;cur_divpop_card&gt;&gt; &gt;&lt;&lt;cur_divpop_card&gt;&gt;
+&lt;/$link&gt;
+&lt;$list variable=cur_text filter=&quot;[&lt;cur_divpop_card&gt;get[text]]&quot;&gt;
+&lt;$codeblock code=&lt;&lt;cur_text&gt;&gt; /&gt;&lt;/$list&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/state/popup/$ur_pk$&quot; text=&quot;show&quot;&gt;&lt;$button set=&quot;$:/state/popup/$ur_pk$&quot; setTo=&quot;show&quot;&gt;code&lt;/$button&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;$link to=&lt;&lt;cur_divpop_card&gt;&gt; &gt;&lt;&lt;cur_divpop_card&gt;&gt;
+&lt;/$link&gt;
+&lt;$tiddler tiddler=&lt;&lt;cur_divpop_card&gt;&gt; &gt;
 &lt;$transclude mode=&quot;block&quot; /&gt;
 &lt;/$tiddler&gt;
+&lt;/$reveal&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
@@ -11039,12 +11047,17 @@ Rem to browse: &lt;$list filter=&quot;[{$ur_temp_remcounter_pk$}]&quot;&gt;&lt;/
 
 [[___|Recent Entries]]</pre>
 </div>
-<div created="20210209091028689" modified="20210209092228242" tags="DOC" title="Panel">
-<pre>&lt;&lt;copy-to-clipboard &quot;9f2f07f0d1d8a8065230dc879af538f6beae7eb7&quot;&gt;&gt;
-
-&lt;$link to=&quot;$:/ControlPanel&quot; /&gt;
-
-&lt;$button&gt;
+<div created="20210209091028689" modified="20210209093903923" tags="DOC" title="Panel">
+<pre>* https://github.com/settings/tokens/new
+** Check &quot;repo&quot;
+** Click button Generate token -&gt; Navigates page
+** Click button Copy to Clipboard
+!!
+* &lt;$link to=&quot;$:/ControlPanel&quot; /&gt;
+** Paste into field &quot;Password, OAUTH token, or personal access token&quot;
+** Close the Control Panel card
+!!
+* Click button &lt;$button&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;no&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/popup/DivPopTitle&quot; text=&quot;&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/tab/sidebar--595412856&quot; text=&quot;$:/core/ui/SideBar/More&quot;/&gt;
