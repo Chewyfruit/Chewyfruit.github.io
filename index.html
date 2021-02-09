@@ -10234,7 +10234,7 @@ Error message and password prompt
 <div created="20201226094827007" modified="20201226094827007" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201226040229699" modified="20210209094128990" title="$:/state/sidebar">
+<div created="20201226040229699" modified="20210209094329300" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20201226114443739" modified="20201226114615520" title="$:/state/tab--1963855381">
@@ -10246,7 +10246,7 @@ Error message and password prompt
 <div created="20210209084939435" modified="20210209084939435" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20201226040229700" modified="20210209094128991" title="$:/state/tab/sidebar--595412856">
+<div created="20201226040229700" modified="20210209094329300" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
@@ -11047,15 +11047,15 @@ Rem to browse: &lt;$list filter=&quot;[{$ur_temp_remcounter_pk$}]&quot;&gt;&lt;/
 
 [[___|Recent Entries]]</pre>
 </div>
-<div created="20210209091028689" modified="20210209094126178" tags="DOC" title="Panel">
-<pre>* https://github.com/settings/tokens/new
-** checkbox &quot;repo&quot; = set
-** Click button Generate token -&gt; Navigates page
-** Click button Copy to Clipboard
+<div created="20210209091028689" modified="20210209094324889" tags="DOC" title="Panel">
+<pre># https://github.com/settings/tokens/new
+&gt;* checkbox &quot;repo&quot; = set
+&gt;* Click button Generate token -&gt; Navigates page
+&gt;* Click button Copy to Clipboard
 !!
-* &lt;$link to=&quot;$:/ControlPanel&quot; /&gt;
-** Paste into field &quot;Password, OAUTH token, or personal access token&quot;
-** Close the Control Panel card
+# &lt;$link to=&quot;$:/ControlPanel&quot; /&gt;
+&gt;* Paste into field &quot;Password, OAUTH token, or personal access token&quot;
+&gt;* Close the Control Panel card
 !!
 * Click button &lt;$button&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;no&quot;/&gt;
@@ -11064,7 +11064,9 @@ Rem to browse: &lt;$list filter=&quot;[{$ur_temp_remcounter_pk$}]&quot;&gt;&lt;/
 &lt;$action-sendmessage $message=&quot;tm-save-wiki&quot; /&gt;
 Save Wiki
 &lt;/$button&gt;
-** Wait a few seconds for the &quot;Saved wiki&quot; notification
+&gt;* Wait a few seconds for the &quot;Saved wiki&quot; notification
+&gt;* The token is saved in internal browser storage
+&gt;* If you get a &quot;401&quot; error, go back to step 1 to generate a new token
 </pre>
 </div>
 <div created="20201226025148520" modified="20201226040306587" tags="META" title="parm SkipSaveExportHTML">
