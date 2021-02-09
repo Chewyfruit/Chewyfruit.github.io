@@ -247,6 +247,8 @@ Error message and password prompt
 
 <li>Food</li>
 
+<li>Food\Apples</li>
+
 <li>Food\Bacon</li>
 
 <li>Food\Fruit</li>
@@ -10248,7 +10250,7 @@ Error message and password prompt
 <div created="20201226094827007" modified="20201226094827007" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20201226040229699" modified="20210209103725172" title="$:/state/sidebar">
+<div created="20201226040229699" modified="20210209104317002" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20201226114443739" modified="20201226114615520" title="$:/state/tab--1963855381">
@@ -10260,16 +10262,16 @@ Error message and password prompt
 <div created="20210209084939435" modified="20210209084939435" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210209101116231" modified="20210209101116231" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20210209101116231" modified="20210209104027971" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20201226040229700" modified="20210209103725172" title="$:/state/tab/sidebar--595412856">
+<div created="20201226040229700" modified="20210209104317002" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210209102331844" list="Checkapp Aisle Panel Food [[template Food card]]" modified="20210209103709342" title="$:/StoryList">
+<div created="20210209104314954" list="Checkapp Panel" modified="20210209104314954" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201226114254558" modified="20201226114440522" title="$:/theme">
@@ -10762,8 +10764,16 @@ Remove COPY tag from all cards
 [[btn Delete Cards]]
 </pre>
 </div>
-<div created="20201114085731300" modified="20210209103641685" tags="DOC" title="Food">
-<pre>&lt;$list variable=cur_section_prefix filter=&quot;[is[current]addsuffix[\]]&quot;&gt;
+<div created="20201114085731300" modified="20210209104303153" tags="DOC" title="Food">
+<pre>&lt;$button&gt;
+&lt;$list variable=cur_card filter=&quot;[prefix[Food\]]&quot;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;cur_card&gt;&gt; at-home=&quot;no&quot;/&gt;
+&lt;/$list&gt;&lt;!--cur_card--&gt;
+Clear All
+&lt;/$button&gt;
+
+
+&lt;$list variable=cur_section_prefix filter=&quot;[is[current]addsuffix[\]]&quot;&gt;
 &lt;$list variable=cur_card filter=&quot;[all[tiddlers]prefix&lt;cur_section_prefix&gt;sort[]]&quot;&gt;
 &lt;$list variable=cur_aisle filter=&quot;[&lt;cur_card&gt;get[aisle]addprefix[- ]else[]]&quot;&gt;
 
@@ -10772,13 +10782,16 @@ Remove COPY tag from all cards
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 &lt;/$list&gt;&lt;!--cur_section_prefix--&gt;</pre>
 </div>
-<div aisle="Back-wall" created="20210209095012043" modified="20210209095021514" tags="" title="Food\Bacon">
+<div aisle="East-wall" at-home="no" created="20210209103947396" modified="20210209104308036" tags="" title="Food\Apples">
 <pre></pre>
 </div>
-<div aisle="East-wall" at-home="yes" created="20210209084351780" modified="20210209101615828" tags="" title="Food\Fruit">
+<div aisle="Back-wall" at-home="no" created="20210209095012043" modified="20210209104308035" tags="" title="Food\Bacon">
 <pre></pre>
 </div>
-<div aisle="East-wall" created="20210209094402047" modified="20210209103444661" tags="" title="Food\Lettuce">
+<div aisle="East-wall" at-home="yes" created="20210209084351780" modified="20210209104309082" tags="" title="Food\Fruit">
+<pre></pre>
+</div>
+<div aisle="East-wall" at-home="no" created="20210209094402047" modified="20210209104308036" tags="" title="Food\Lettuce">
 <pre></pre>
 </div>
 <div created="20200411063250301" key="((font-large))" modified="20201226040306587" tags="$:/tags/KeyboardShortcut META" title="keyboard action FontLarge">
@@ -11198,9 +11211,9 @@ Save Wiki
 &lt;&lt;renderContent&gt;&gt;
 </pre>
 </div>
-<div created="20210209101530435" modified="20210209103517187" tags="$:/tags/ViewTemplate MCR" title="template Food card">
+<div created="20210209101530435" modified="20210209104041865" tags="$:/tags/ViewTemplate MCR" title="template Food card">
 <pre>&lt;$list variable=cur_card filter=&quot;[is[current]prefix[Food\]]&quot;&gt;
-&lt;$list variable=cur_aisle filter=&quot;[&lt;cur_card&gt;get[aisle]]&quot;&gt;
+&lt;$list variable=cur_aisle filter=&quot;[&lt;cur_card&gt;get[aisle]else[]]&quot;&gt;
 
 &lt;$select tiddler=&lt;&lt;cur_card&gt;&gt; field=&quot;aisle&quot; default=&lt;&lt;cur_aisle&gt;&gt; &gt;
 &lt;$list variable=aisle_card filter=&quot;[prefix[Aisle\]]&quot;&gt;
