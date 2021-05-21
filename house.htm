@@ -10296,9 +10296,9 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[mcr glbl_food_checkbox]]
-# [[template Aisle card]]
-# [[template Food card]]</pre>
+# [[mcr glbl_task_checkbox]]
+# [[template Room card]]
+# [[template Task card]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -11863,7 +11863,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210411090905404" modified="20210411091222320" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210307044348911" modified="20210521010955105" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20210521012141396" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -11875,13 +11875,13 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20210521010955105" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20210521012141396" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[House Checkapp]]" title="$:/StoryList">
+<div created="20210521012021062" list="[[House Checkapp]] Task Task\Mop" modified="20210521012106568" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12009,11 +12009,11 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div color="#423fde" created="20210424090522887" modified="20210424090546408" tags="$:/positivesigner/base-install" title="INDEX">
 <pre></pre>
 </div>
-<div created="20210209100649066" modified="20210521004557292" tags="$:/tags/Macro MCR" title="mcr glbl_task_checkbox">
+<div created="20210209100649066" modified="20210521011512801" tags="$:/tags/Macro MCR" title="mcr glbl_task_checkbox">
 <pre>\define glbl_task_checkbox()
 &lt;$list variable=cur_card filter=&quot;[[$(cur_card)$]]&quot;&gt;
 &lt;$list variable=card_title filter=&quot;[&lt;cur_card&gt;split[\]last[]]&quot;&gt;
-&lt;$checkbox default=&quot;no&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;at-home&quot; tiddler=&lt;&lt;cur_card&gt;&gt;&gt;&lt;span style=&quot;padding-right:20px&quot; /&gt;&lt;/$checkbox&gt; &lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;card_title&gt;&gt;&lt;/$link&gt;
+&lt;$checkbox default=&quot;no&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;completed&quot; tiddler=&lt;&lt;cur_card&gt;&gt;&gt;&lt;span style=&quot;padding-right:20px&quot; /&gt;&lt;/$checkbox&gt; &lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;card_title&gt;&gt;&lt;/$link&gt;
 &lt;/$list&gt;&lt;!--card_title--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 \end
@@ -12032,10 +12032,10 @@ Open all
 <div created="20210521004451689" modified="20210521004458680" tags="" title="Room\Kitchen">
 <pre></pre>
 </div>
-<div created="20201114085731300" modified="20210521003835294" tags="DOC" title="Task">
+<div created="20201114085731300" modified="20210521012101767" tags="DOC" title="Task">
 <pre>&lt;$button&gt;
 &lt;$list variable=cur_card filter=&quot;[prefix[Task\]]&quot;&gt;
-&lt;$action-setfield $tiddler=&lt;&lt;cur_card&gt;&gt; at-home=&quot;no&quot;/&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;cur_card&gt;&gt; completed=&quot;no&quot;/&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 Clear All
 &lt;/$button&gt;
@@ -12054,11 +12054,11 @@ Clear All
 &lt;$list variable=cur_card filter=&quot;[all[tiddlers]prefix&lt;cur_section_prefix&gt;sort[]]&quot;&gt;
 &lt;$list variable=cur_aisle filter=&quot;[&lt;cur_card&gt;get[aisle]else[]]&quot;&gt;
 &lt;$list variable=aisle_card filter=&quot;[&lt;cur_aisle&gt;addprefix[Aisle\]]&quot;&gt;
-&lt;$list variable=cur_at_home filter=&quot;[&lt;cur_card&gt;get[at-home]match[yes]else[no]]&quot;&gt;
-&lt;$list variable=filter_show_unchecked filter=&quot;[&lt;checked_task_display&gt;match[no]else&lt;cur_at_home&gt;match&lt;cur_at_home&gt;]&quot;&gt;
+&lt;$list variable=cur_completed filter=&quot;[&lt;cur_card&gt;get[completed]match[yes]else[no]]&quot;&gt;
+&lt;$list variable=filter_show_unchecked filter=&quot;[&lt;checked_task_display&gt;match[no]else&lt;cur_completed&gt;match&lt;cur_completed&gt;]&quot;&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&lt;glbl_task_checkbox&gt;&gt;&lt;/td&gt;&lt;td&gt; &lt;span style=&quot;padding-left:10px&quot; /&gt;&lt;$link to=&lt;&lt;aisle_card&gt;&gt; &gt;&lt;&lt;cur_aisle&gt;&gt;&lt;/$link&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/$list&gt;&lt;!--filter_show_unchecked--&gt;
-&lt;/$list&gt;&lt;!--cur_at_home--&gt;
+&lt;/$list&gt;&lt;!--cur_completed--&gt;
 &lt;/$list&gt;&lt;!--aisle_card--&gt;
 &lt;/$list&gt;&lt;!--cur_aisle--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
@@ -12066,10 +12066,10 @@ Clear All
 &lt;/$list&gt;&lt;!--checked_task_display--&gt;
 &lt;/table&gt;</pre>
 </div>
-<div at-home="no" created="20210521004503309" modified="20210521004900220" room="Kitchen" tags="" title="Task\Mop">
+<div completed="no" created="20210521004503309" modified="20210521012139588" room="Kitchen" tags="" title="Task\Mop">
 <pre></pre>
 </div>
-<div created="20210209094906114" modified="20210521004733890" tags="$:/tags/ViewTemplate MCR" title="template Room card">
+<div created="20210209094906114" modified="20210521011549889" tags="$:/tags/ViewTemplate MCR" title="template Room card">
 <pre>&lt;$list variable=cur_room filter=&quot;[is[current]prefix[Room\]split[\]last[]]&quot;&gt;
 &lt;span style=&quot;padding-left:150px&quot; /&gt;
 &lt;$checkbox default=&quot;yes&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;text&quot; tiddler=&quot;$:/state/popup/checked-task-display&quot;&gt;&lt;span style=&quot;padding-left:20px&quot; /&gt;Show checked&lt;/$checkbox&gt;&lt;br&gt;&lt;br&gt;
@@ -12082,12 +12082,12 @@ Clear All
 
 &lt;$list variable=checked_task_display filter=&quot;[[$:/state/popup/checked-task-display]get[text]match[no]else[yes]]&quot;&gt;
 &lt;$list variable=cur_card filter=&quot;[prefix[Task\]room&lt;cur_room&gt;sort[]]&quot;&gt;
-&lt;$list variable=cur_at_home filter=&quot;[&lt;cur_card&gt;get[at-home]match[yes]else[no]]&quot;&gt;
-&lt;$list variable=filter_show_unchecked filter=&quot;[&lt;checked_task_display&gt;match[no]else&lt;cur_at_home&gt;match&lt;cur_at_home&gt;]&quot;&gt;
+&lt;$list variable=cur_completed filter=&quot;[&lt;cur_card&gt;get[completed]match[yes]else[no]]&quot;&gt;
+&lt;$list variable=filter_show_unchecked filter=&quot;[&lt;checked_task_display&gt;match[no]else&lt;cur_completed&gt;match&lt;cur_completed&gt;]&quot;&gt;
 
 &lt;&lt;glbl_task_checkbox&gt;&gt;
 &lt;/$list&gt;&lt;!--filter_show_unchecked--&gt;
-&lt;/$list&gt;&lt;!--cur_at_home--&gt;
+&lt;/$list&gt;&lt;!--cur_completed--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 &lt;/$list&gt;&lt;!--checked_task_display--&gt;
 &lt;/$list&gt;&lt;!--cur_room--&gt;
