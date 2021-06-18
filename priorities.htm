@@ -11879,7 +11879,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210411090905404" modified="20210411091222320" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210307044348911" modified="20210618224328539" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20210618230101091" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210618213830067" title="$:/state/tab--1963855381">
@@ -11900,7 +11900,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210307045410888" modified="20210618224045368" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210307044348912" modified="20210618224328539" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20210618230101091" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20210618213751854" modified="20210618213817425" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -11909,7 +11909,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210618221824001" list="Priorities zPanel Priority Priority\High Priority\Medium Priority\Low Task" modified="20210618224326858" title="$:/StoryList">
+<div created="20210618221824001" list="Priorities zPanel Priority" modified="20210618230059170" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12102,11 +12102,11 @@ Clear All
 &lt;/$list&gt;&lt;!--checked_task_display--&gt;
 &lt;/table&gt;</pre>
 </div>
-<div Priority="Low" completed="no" created="20210618223506636" modified="20210618224310209" tags="Task" title="Task\Extract an .exe">
+<div completed="no" created="20210618223506636" modified="20210618230041296" priority="Low" tags="Task" title="Task\Extract an .exe">
 <pre></pre>
 </div>
-<div created="20210209094906114" modified="20210618224141897" tags="$:/tags/ViewTemplate MCR" title="template Priority card">
-<pre>&lt;$list variable=cur_room filter=&quot;[is[current]prefix[Priority\]split[\]last[]]&quot;&gt;
+<div created="20210209094906114" modified="20210618230011231" tags="$:/tags/ViewTemplate MCR" title="template Priority card">
+<pre>&lt;$list variable=cur_priority filter=&quot;[is[current]prefix[Priority\]split[\]last[]]&quot;&gt;
 &lt;span style=&quot;padding-left:150px&quot; /&gt;
 &lt;$checkbox default=&quot;yes&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;text&quot; tiddler=&quot;$:/state/popup/checked-task-display&quot;&gt;&lt;span style=&quot;padding-left:20px&quot; /&gt;Show checked&lt;/$checkbox&gt;&lt;br&gt;&lt;br&gt;
 
@@ -12117,7 +12117,7 @@ Clear All
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 
 &lt;$list variable=checked_task_display filter=&quot;[[$:/state/popup/checked-task-display]get[text]match[no]else[yes]]&quot;&gt;
-&lt;$list variable=cur_card filter=&quot;[prefix[Task\]room&lt;cur_room&gt;sort[]]&quot;&gt;
+&lt;$list variable=cur_card filter=&quot;[prefix[Task\]priority&lt;cur_priority&gt;sort[]]&quot;&gt;
 &lt;$list variable=cur_completed filter=&quot;[&lt;cur_card&gt;get[completed]match[yes]else[no]]&quot;&gt;
 &lt;$list variable=filter_show_unchecked filter=&quot;[&lt;checked_task_display&gt;match[no]else&lt;cur_completed&gt;match&lt;cur_completed&gt;]&quot;&gt;
 
@@ -12126,15 +12126,15 @@ Clear All
 &lt;/$list&gt;&lt;!--cur_completed--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 &lt;/$list&gt;&lt;!--checked_task_display--&gt;
-&lt;/$list&gt;&lt;!--cur_room--&gt;
+&lt;/$list&gt;&lt;!--cur_priority--&gt;
 </pre>
 </div>
-<div created="20210209101530435" modified="20210618224218965" tags="$:/tags/ViewTemplate MCR" title="template Task card">
+<div created="20210209101530435" modified="20210618225914759" tags="$:/tags/ViewTemplate MCR" title="template Task card">
 <pre>&lt;$list variable=cur_card filter=&quot;[is[current]prefix[Task\]sort[]]&quot;&gt;
-&lt;$list variable=cur_room filter=&quot;[&lt;cur_card&gt;get[Priority]else[]]&quot;&gt;
-&lt;$list variable=room_card filter=&quot;[&lt;cur_room&gt;addprefix[Room\]]&quot;&gt;
+&lt;$list variable=cur_room filter=&quot;[&lt;cur_card&gt;get[priority]else[]]&quot;&gt;
+&lt;$list variable=room_card filter=&quot;[&lt;cur_room&gt;addprefix[Priority\]]&quot;&gt;
 
-&lt;$select tiddler=&lt;&lt;cur_card&gt;&gt; field=&quot;Priority&quot; default=&lt;&lt;cur_room&gt;&gt; &gt;
+&lt;$select tiddler=&lt;&lt;cur_card&gt;&gt; field=&quot;priority&quot; default=&lt;&lt;cur_room&gt;&gt; &gt;
 &lt;$list variable=room_card filter=&quot;[prefix[Priority\]sort[]]&quot;&gt;
 &lt;$list variable=found_room filter=&quot;[&lt;room_card&gt;split[\]last[]]&quot;&gt;
 &lt;option value=&lt;&lt;found_room&gt;&gt;&gt;&lt;&lt;found_room&gt;&gt;&lt;/option&gt;
