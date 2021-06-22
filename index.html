@@ -11482,7 +11482,7 @@ Normal Font
 &lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodylineheight&quot; text=&quot;24px&quot;/&gt;
 </pre>
 </div>
-<div created="20201120062240873" modified="20210622002322597" tags="$:/tags/Macro $:/positivesigner/text-ref" title="$:/positivesigner/text-ref/mcr glbl_article_list">
+<div created="20201120062240873" modified="20210622002413097" tags="$:/tags/Macro $:/positivesigner/text-ref" title="$:/positivesigner/text-ref/mcr glbl_article_list">
 <pre>\define glbl_article_list()
 &lt;!--2021m04d24--&gt;
 &lt;ol&gt;
@@ -11490,7 +11490,7 @@ Normal Font
 &lt;$list variable=cur_card filter=&quot;[prefix&lt;card_prefix&gt;sort[]]&quot;&gt;
 &lt;$list variable=disp_name filter=&quot;[&lt;cur_card&gt;split[\]butfirst[]join[\]]&quot;&gt;
 &lt;li&gt;&lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;disp_name&gt;&gt;&lt;/$link&gt;
-&lt;$list variable=rem_count filter=&quot;[field:at-home[yes]field:aisle&lt;disp_name&gt;count[]!match[0]]&quot;&gt;
+&lt;$list variable=rem_count filter=&quot;[field:aisle&lt;disp_name&gt;field:at-home[yes]count[]!match[0]]&quot;&gt;
 (&lt;&lt;rem_count&gt;&gt;)
 &lt;/$list&gt;
 &lt;/li&gt;  
