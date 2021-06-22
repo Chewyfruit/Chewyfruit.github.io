@@ -12141,7 +12141,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210622003158676" list="[[Food Checkapp]] Panel" modified="20210622003245641" title="$:/StoryList">
+<div created="20210622003158676" list="[[Food Checkapp]] [[$:/positivesigner/text-ref/Recent Entries]] [[template Aisle card]] Aisle\Back-west-dairy" modified="20210622073019929" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12700,16 +12700,17 @@ Save Wiki
 &gt;* If you get a &quot;404&quot; error, save to repository and open it online to finish setting up
 </pre>
 </div>
-<div created="20210209094906114" modified="20210518050749748" tags="$:/tags/ViewTemplate MCR" title="template Aisle card">
+<div created="20210209094906114" modified="20210622073338320" tags="$:/tags/ViewTemplate MCR" title="template Aisle card">
 <pre>&lt;$list variable=cur_aisle filter=&quot;[is[current]prefix[Aisle\]split[\]last[]]&quot;&gt;
-&lt;span style=&quot;padding-left:150px&quot; /&gt;
+&lt;div style=&quot;padding-left:150px&quot;&gt;
 &lt;$checkbox default=&quot;yes&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;text&quot; tiddler=&quot;$:/state/popup/checked-food-display&quot;&gt;&lt;span style=&quot;padding-left:20px&quot; /&gt;Show checked&lt;/$checkbox&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;span style=&quot;padding-left:150px&quot; /&gt;Recent changes:
+Recent changes:
 &lt;$list variable=cur_card filter=&quot;[prefix[Food\]!sort[modified]limit[3]]&quot;&gt;
 
 &lt;span style=&quot;padding-left:150px&quot; /&gt;&lt;&lt;glbl_food_checkbox&gt;&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
+&lt;/div&gt;
 
 &lt;$list variable=checked_food_display filter=&quot;[[$:/state/popup/checked-food-display]get[text]match[no]else[yes]]&quot;&gt;
 &lt;$list variable=cur_card filter=&quot;[prefix[Food\]aisle&lt;cur_aisle&gt;sort[]]&quot;&gt;
