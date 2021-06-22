@@ -11482,7 +11482,7 @@ Normal Font
 &lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodylineheight&quot; text=&quot;24px&quot;/&gt;
 </pre>
 </div>
-<div created="20201120062240873" modified="20210622002016911" tags="$:/tags/Macro $:/positivesigner/text-ref" title="$:/positivesigner/text-ref/mcr glbl_article_list">
+<div created="20201120062240873" modified="20210622002225597" tags="$:/tags/Macro $:/positivesigner/text-ref" title="$:/positivesigner/text-ref/mcr glbl_article_list">
 <pre>\define glbl_article_list()
 &lt;!--2021m04d24--&gt;
 &lt;ol&gt;
@@ -11490,7 +11490,7 @@ Normal Font
 &lt;$list variable=cur_card filter=&quot;[prefix&lt;card_prefix&gt;sort[]]&quot;&gt;
 &lt;$list variable=disp_name filter=&quot;[&lt;cur_card&gt;split[\]butfirst[]join[\]]&quot;&gt;
 &lt;li&gt;&lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;disp_name&gt;&gt;&lt;/$link&gt;
-&lt;$list variable=rem_count filter=&quot;[count[]!match[0]]&quot;&gt;
+&lt;$list variable=rem_count filter=&quot;[field:at-home[yes]field:aisle&lt;disp_name&gt;count[]!match[0]]&quot;&gt;
 (&lt;&lt;rem_count&gt;&gt;)
 &lt;/$list&gt;
 &lt;/li&gt;  
@@ -12141,7 +12141,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210622000008745" list="[[Food Checkapp]] [[$:/positivesigner/text-ref/mcr glbl_article_list]] Aisle" modified="20210622000158453" title="$:/StoryList">
+<div created="20210622000008745" list="[[Food Checkapp]] [[$:/positivesigner/text-ref/mcr glbl_article_list]] Aisle" modified="20210622002029143" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
