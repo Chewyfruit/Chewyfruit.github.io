@@ -11482,7 +11482,7 @@ Normal Font
 &lt;$action-setfield $tiddler=&quot;$:/themes/tiddlywiki/vanilla/metrics/bodylineheight&quot; text=&quot;24px&quot;/&gt;
 </pre>
 </div>
-<div created="20201120062240873" modified="20210622001548177" tags="$:/tags/Macro $:/positivesigner/text-ref" title="$:/positivesigner/text-ref/mcr glbl_article_list">
+<div created="20201120062240873" modified="20210622001843509" tags="$:/tags/Macro $:/positivesigner/text-ref" title="$:/positivesigner/text-ref/mcr glbl_article_list">
 <pre>\define glbl_article_list()
 &lt;!--2021m04d24--&gt;
 &lt;ol&gt;
@@ -11490,7 +11490,10 @@ Normal Font
 &lt;$list variable=cur_card filter=&quot;[prefix&lt;card_prefix&gt;sort[]]&quot;&gt;
 &lt;$list variable=disp_name filter=&quot;[&lt;cur_card&gt;split[\]butfirst[]join[\]]&quot;&gt;
 &lt;li&gt;&lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;disp_name&gt;&gt;&lt;/$link&gt;
- (5)&lt;/li&gt;  
+&lt;$list variable=rem_count filter=&quot;[[5]]&quot;&gt;
+&lt;&lt;rem_count&gt;&gt;
+&lt;/$list&gt;
+&lt;/li&gt;  
 &lt;/$list&gt;&lt;!--disp_name--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 &lt;/$list&gt;&lt;!--card_prefix--&gt;
