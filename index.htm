@@ -10524,8 +10524,8 @@ Error message and password prompt
 <div created="20210618231214558" modified="20210618231218132" title="$:/GitHub/Branch">
 <pre>main</pre>
 </div>
-<div created="20210618231234359" modified="20210618231258696" title="$:/GitHub/Filename">
-<pre>index.html</pre>
+<div created="20210618231234359" modified="20210622081223927" title="$:/GitHub/Filename">
+<pre>index.htm</pre>
 </div>
 <div created="20210618231228009" modified="20210618231228009" title="$:/GitHub/Path">
 <pre>/</pre>
@@ -12120,7 +12120,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210411090905404" modified="20210411091222320" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210307044348911" modified="20210622000141211" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20210622081328919" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12135,13 +12135,13 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20210618231306932" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20210622081328919" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210622000008745" list="[[Food Checkapp]] [[$:/positivesigner/text-ref/mcr glbl_article_list]] Aisle" modified="20210622002418097" title="$:/StoryList">
+<div created="20210622081217791" list="[[Food Checkapp]] Panel" modified="20210622081230417" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12317,21 +12317,22 @@ Open all
 <div created="20210209104441290" modified="20210518050923678" tags="" title="Aisle\West-wall">
 <pre></pre>
 </div>
-<div created="20201114085731300" modified="20210518050923678" tags="DOC" title="Food">
+<div created="20201114085731300" modified="20210622075129123" tags="DOC" title="Food">
 <pre>&lt;$button&gt;
 &lt;$list variable=cur_card filter=&quot;[prefix[Food\]]&quot;&gt;
 &lt;$action-setfield $tiddler=&lt;&lt;cur_card&gt;&gt; at-home=&quot;no&quot;/&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 Clear All
 &lt;/$button&gt;
-&lt;span style=&quot;padding-left:150px&quot; /&gt;
+&lt;div style=&quot;padding-left:150px&quot; &gt;
 &lt;$checkbox default=&quot;yes&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;text&quot; tiddler=&quot;$:/state/popup/checked-food-display&quot;&gt;&lt;span style=&quot;padding-left:20px&quot; /&gt;Show checked&lt;/$checkbox&gt;
 
-&lt;span style=&quot;padding-left:150px&quot; /&gt;Recent changes:
+Recent changes:
 &lt;$list variable=cur_card filter=&quot;[prefix[Food\]!sort[modified]limit[3]]&quot;&gt;
 
-&lt;span style=&quot;padding-left:150px&quot; /&gt;&lt;&lt;glbl_food_checkbox&gt;&gt; &lt;&lt;cur_aisle&gt;&gt;
+&lt;&lt;glbl_food_checkbox&gt;&gt; &lt;&lt;cur_aisle&gt;&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
+&lt;/div&gt;
 
 &lt;table&gt;
 &lt;$list variable=checked_food_display filter=&quot;[[$:/state/popup/checked-food-display]get[text]match[no]else[yes]]&quot;&gt;
@@ -12519,7 +12520,7 @@ Clear All
 <div aisle="Back-west-dairy" at-home="no" created="20210209105829070" modified="20210601061121094" tags="" title="Food\OJ (Minute-maid calcium low-pulp)">
 <pre></pre>
 </div>
-<div aisle="Back-west-dairy" at-home="no" created="20210209114626825" modified="20210601061104644" tags="" title="Food\OJ (Minute-maid country style medium-pulp)">
+<div aisle="Back-west-dairy" at-home="no" created="20210209114626825" modified="20210622003216358" tags="" title="Food\OJ (Minute-maid country style medium-pulp)">
 <pre></pre>
 </div>
 <div aisle="Middle-east-cake" at-home="yes" created="20210209115145939" modified="20210601061157001" tags="" title="Food\Olive oil">
@@ -12700,16 +12701,17 @@ Save Wiki
 &gt;* If you get a &quot;404&quot; error, save to repository and open it online to finish setting up
 </pre>
 </div>
-<div created="20210209094906114" modified="20210518050749748" tags="$:/tags/ViewTemplate MCR" title="template Aisle card">
+<div created="20210209094906114" modified="20210622073424444" tags="$:/tags/ViewTemplate MCR" title="template Aisle card">
 <pre>&lt;$list variable=cur_aisle filter=&quot;[is[current]prefix[Aisle\]split[\]last[]]&quot;&gt;
-&lt;span style=&quot;padding-left:150px&quot; /&gt;
+&lt;div style=&quot;padding-left:150px&quot;&gt;
 &lt;$checkbox default=&quot;yes&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;text&quot; tiddler=&quot;$:/state/popup/checked-food-display&quot;&gt;&lt;span style=&quot;padding-left:20px&quot; /&gt;Show checked&lt;/$checkbox&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;span style=&quot;padding-left:150px&quot; /&gt;Recent changes:
+Recent changes:
 &lt;$list variable=cur_card filter=&quot;[prefix[Food\]!sort[modified]limit[3]]&quot;&gt;
 
-&lt;span style=&quot;padding-left:150px&quot; /&gt;&lt;&lt;glbl_food_checkbox&gt;&gt;
+&lt;&lt;glbl_food_checkbox&gt;&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
+&lt;/div&gt;
 
 &lt;$list variable=checked_food_display filter=&quot;[[$:/state/popup/checked-food-display]get[text]match[no]else[yes]]&quot;&gt;
 &lt;$list variable=cur_card filter=&quot;[prefix[Food\]aisle&lt;cur_aisle&gt;sort[]]&quot;&gt;
