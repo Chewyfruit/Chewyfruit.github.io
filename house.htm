@@ -391,7 +391,7 @@ Error message and password prompt
 
 <li>Task\Rechargeable Batteries</li>
 
-<li>Task\Refrigerator floor and walls</li>
+<li>Task\Refrigerator floor and walls potato menace</li>
 
 <li>Task\Refrigerator Shelves</li>
 
@@ -11929,7 +11929,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210411090905404" modified="20210411091222320" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210307044348911" modified="20210621235922259" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20210622074802639" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -11944,13 +11944,13 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20210621235922259" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20210622074802639" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210621192130549" list="[[House Checkapp]] zPanel" modified="20210621235920179" title="$:/StoryList">
+<div created="20210622074638716" list="[[House Checkapp]] zPanel" modified="20210622074800142" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12164,7 +12164,7 @@ Clear All
 <div created="20210521013634696" modified="20210521013737726" room="Kitchen" tags="" title="Task\Garbage cabinet walls">
 <pre></pre>
 </div>
-<div created="20210521013340381" modified="20210521013343867" room="Bathroom" tags="" title="Task\Garbage Cans Bathroom">
+<div completed="yes" created="20210521013340381" modified="20210622074558737" room="Bathroom" tags="" title="Task\Garbage Cans Bathroom">
 <pre></pre>
 </div>
 <div created="20210521013405750" modified="20210621193210090" room="Bedroom" tags="" title="Task\Garbage Cans Bedroom">
@@ -12197,7 +12197,7 @@ Clear All
 <div created="20210521014708300" modified="20210521014725994" room="Bedroom" tags="" title="Task\Rechargeable Batteries">
 <pre></pre>
 </div>
-<div created="20210521013759471" modified="20210521013814761" room="Kitchen" tags="" title="Task\Refrigerator floor and walls">
+<div completed="no" created="20210521013759471" modified="20210622074700544" room="Kitchen" tags="" title="Task\Refrigerator floor and walls potato menace">
 <pre></pre>
 </div>
 <div created="20210521014632650" modified="20210521014643439" room="Kitchen" tags="" title="Task\Refrigerator Shelves">
@@ -12233,16 +12233,17 @@ Clear All
 <div created="20210521014903454" modified="20210521014912515" room="Car" tags="" title="Task\Wash car">
 <pre></pre>
 </div>
-<div created="20210209094906114" modified="20210521011549889" tags="$:/tags/ViewTemplate MCR" title="template Room card">
+<div created="20210209094906114" modified="20210622074534158" tags="$:/tags/ViewTemplate MCR" title="template Room card">
 <pre>&lt;$list variable=cur_room filter=&quot;[is[current]prefix[Room\]split[\]last[]]&quot;&gt;
-&lt;span style=&quot;padding-left:150px&quot; /&gt;
+&lt;div style=&quot;padding-left:150px&quot;&gt;
 &lt;$checkbox default=&quot;yes&quot; unchecked=&quot;no&quot; checked=&quot;yes&quot; field=&quot;text&quot; tiddler=&quot;$:/state/popup/checked-task-display&quot;&gt;&lt;span style=&quot;padding-left:20px&quot; /&gt;Show checked&lt;/$checkbox&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;span style=&quot;padding-left:150px&quot; /&gt;Recent changes:
+Recent changes:
 &lt;$list variable=cur_card filter=&quot;[prefix[Task\]!sort[modified]limit[3]]&quot;&gt;
 
-&lt;span style=&quot;padding-left:150px&quot; /&gt;&lt;&lt;glbl_task_checkbox&gt;&gt;
+&lt;&lt;glbl_task_checkbox&gt;&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
+&lt;/div&gt;
 
 &lt;$list variable=checked_task_display filter=&quot;[[$:/state/popup/checked-task-display]get[text]match[no]else[yes]]&quot;&gt;
 &lt;$list variable=cur_card filter=&quot;[prefix[Task\]room&lt;cur_room&gt;sort[]]&quot;&gt;
