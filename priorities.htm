@@ -11897,7 +11897,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210411090905404" modified="20210411091222320" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210307044348911" modified="20210728210759944" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20210728211734192" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210618213830067" title="$:/state/tab--1963855381">
@@ -11918,7 +11918,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210307045410888" modified="20210618224045368" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210307044348912" modified="20210728210759944" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20210728211734193" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20210618213751854" modified="20210618213817425" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -11927,7 +11927,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210728204133343" list="Priorities zPanel Task" modified="20210728210742758" title="$:/StoryList">
+<div created="20210728211729936" list="Priorities zPanel" modified="20210728211729936" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12086,7 +12086,7 @@ Open all
 <div created="20210618222941319" modified="20210618223012729" tags="Priority" title="Priority\Medium">
 <pre></pre>
 </div>
-<div created="20201114085731300" modified="20210622080316091" tags="DOC" title="Task">
+<div created="20201114085731300" modified="20210728211624236" tags="DOC" title="Task">
 <pre>&lt;$button&gt;
 &lt;$list variable=cur_card filter=&quot;[prefix[Task\]]&quot;&gt;
 &lt;$action-setfield $tiddler=&lt;&lt;cur_card&gt;&gt; completed=&quot;no&quot;/&gt;
@@ -12107,7 +12107,7 @@ Recent changes:
 &lt;$list variable=checked_task_display filter=&quot;[[$:/state/popup/checked-task-display]get[text]match[no]else[yes]]&quot;&gt;
 &lt;$list variable=cur_section_prefix filter=&quot;[is[current]addsuffix[\]]&quot;&gt;
 &lt;$list variable=cur_card filter=&quot;[all[tiddlers]prefix&lt;cur_section_prefix&gt;sort[]]&quot;&gt;
-&lt;$list variable=cur_aisle filter=&quot;[&lt;cur_card&gt;get[Priority]else[]]&quot;&gt;
+&lt;$list variable=cur_aisle filter=&quot;[&lt;cur_card&gt;get[priority]else[]]&quot;&gt;
 &lt;$list variable=aisle_card filter=&quot;[&lt;cur_aisle&gt;addprefix[Priority\]]&quot;&gt;
 &lt;$list variable=cur_completed filter=&quot;[&lt;cur_card&gt;get[completed]match[yes]else[no]]&quot;&gt;
 &lt;$list variable=filter_show_unchecked filter=&quot;[&lt;checked_task_display&gt;match[no]else&lt;cur_completed&gt;match&lt;cur_completed&gt;]&quot;&gt;
@@ -12127,10 +12127,10 @@ Recent changes:
 <div completed="no" created="20210618232831925" modified="20210622080759819" priority="High" tags="Task" title="Task\Dishes">
 <pre></pre>
 </div>
-<div completed="no" created="20210728210041631" modified="20210728210114729" priority="" tags="Task" title="Task\Fix Couch slouch">
+<div completed="no" created="20210728210041631" modified="20210728211432533" priority="Medium" tags="Task" title="Task\Fix Couch slouch">
 <pre></pre>
 </div>
-<div created="20210618233356066" modified="20210618233443797" priority="High" tags="Task" title="Task\Fix this 'Task' card to show priorities next to each task">
+<div completed="yes" created="20210618233356066" modified="20210728211633881" priority="High" tags="Task" title="Task\Fix this 'Task' card to show priorities next to each task">
 <pre></pre>
 </div>
 <div completed="no" created="20210630055751708" modified="20210728205445202" priority="High" tags="Task" title="Task\Go through food Shopping list">
