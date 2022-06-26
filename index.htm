@@ -597,7 +597,11 @@ Error message and password prompt
 
 <li>mcr glbl_food_checkbox</li>
 
+<li>New Card</li>
+
 <li>Panel</li>
+
+<li>Ptest</li>
 
 <li>Take Out</li>
 
@@ -12337,7 +12341,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210411090905404" modified="20210411091222320" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210307044348911" modified="20220617211234884" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20220626121459813" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12352,13 +12356,13 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20220617211234885" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20220626121459813" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220617205404809" list="[[Food Checkapp]] Food" modified="20220617205818249" title="$:/StoryList">
+<div created="20220626121353367" list="[[Food Checkapp]] Panel $:/ControlPanel [[New Card]]" modified="20220626121355269" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12591,8 +12595,9 @@ Recent changes:
 &lt;/$list&gt;&lt;!--checked_food_display--&gt;
 &lt;/table&gt;</pre>
 </div>
-<div created="20201114051300267" modified="20220524212241501" tags="INDEX" title="Food Checkapp">
+<div created="20201114051300267" modified="20220626121456910" tags="INDEX" title="Food Checkapp">
 <pre>&lt;div style='float:right'&gt;&lt;$button&gt;
+&lt;$ptest pwd=&quot;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&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;no&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/popup/DivPopTitle&quot; text=&quot;&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/tab/sidebar--595412856&quot; text=&quot;$:/core/ui/SideBar/More&quot;/&gt;
@@ -12923,6 +12928,10 @@ Save Wiki
 \end
 </pre>
 </div>
+<div created="20220626121404591" modified="20220626121441459" tags="" title="New Card">
+<pre>&lt;$ptest pwd=&quot;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&quot;/&gt;
+</pre>
+</div>
 <div created="20210209091028689" modified="20210618231726113" tags="DOC" title="Panel">
 <pre>* https://github.com/settings/tokens
 &gt;* If there is an existing personal access token,
@@ -12955,6 +12964,46 @@ Save Wiki
 &gt;* If you get a &quot;401&quot; error, go back to step 1 to generate a new token
 &gt;* If you get a &quot;404&quot; error, save to repository and open it online to finish setting up
 </pre>
+</div>
+<div created="20220626120320928" modified="20220626121341513" module-type="widget" tags="MCR" title="Ptest" type="application/javascript">
+<pre>/*\
+
+Password Set test
+
+$:/core/ui/ControlPanel/Saving/GitHub
+- $password name=&quot;github&quot; calls $:/core/modules/widgets/password.js
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+&quot;use strict&quot;;
+
+var Widget = require(&quot;$:/core/modules/widgets/widget.js&quot;).widget;
+
+var MyWidget = function(parseTreeNode,options) {
+    this.initialise(parseTreeNode,options);
+};
+
+/*
+Inherit from the base widget class
+*/
+MyWidget.prototype = new Widget();
+
+/*
+Render this widget into the DOM
+*/
+MyWidget.prototype.render = function(parent,nextSibling) {
+    this.computeAttributes();
+	var pwd = this.getAttribute(&quot;pwd&quot;, &quot;&quot;);
+    this.parentDomNode = parent;
+	$tw.utils.savePassword(&quot;github&quot;,pwd);
+};
+
+exports.ptest = MyWidget;
+
+})();</pre>
 </div>
 <div created="20211015053525289" modified="20211015053540508" tags="DOC" title="Take Out">
 <pre>&lt;&lt;glbl_article_list&gt;&gt;
