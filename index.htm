@@ -337,6 +337,8 @@ Error message and password prompt
 
 <li>$:/shopdata/section/Dairy</li>
 
+<li>$:/shopdata/section/Meat</li>
+
 <li>$:/shopdata/section/Produce</li>
 
 <li>$:/shopdata/selection/store</li>
@@ -12409,11 +12411,14 @@ Invalid section [&lt;&lt;cur_section&gt;&gt;]: &lt;$link to=&lt;&lt;cur_food&gt;
 <div created="20220815213905339" modified="20220815214543422" tags="" title="$:/shopdata/section/Dairy">
 <pre></pre>
 </div>
+<div created="20220815222900196" modified="20220815222902037" tags="" title="$:/shopdata/section/Meat">
+<pre></pre>
+</div>
 <div created="20220815213841017" modified="20220815214555393" tags="" title="$:/shopdata/section/Produce">
 <pre></pre>
 </div>
-<div created="20220815204044719" modified="20220815221842154" title="$:/shopdata/selection/store">
-<pre>$:/shopdata/store/WinCo Coburg</pre>
+<div created="20220815204044719" modified="20220815222154657" title="$:/shopdata/selection/store">
+<pre>$:/shopdata/store/WinCo Barger</pre>
 </div>
 <div created="20220815203809007" modified="20220815220136764" tags="" title="$:/shopdata/store/WinCo Barger">
 <pre></pre>
@@ -12459,7 +12464,7 @@ Section
 <div created="20210411090905404" modified="20220803032022534" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210307044348911" modified="20220815221844646" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20220815223211974" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12474,13 +12479,13 @@ Section
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20220815221844646" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20220815223211975" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220815221629413" list="[[Shopping App]] Administration $:/shopdata/admin/store [[$:/shopdata/store/WinCo Coburg]] $:/shopdata/admin/food" modified="20220815221833693" title="$:/StoryList">
+<div created="20220815221629413" list="[[Shopping App]] Administration $:/shopdata/admin/section $:/shopdata/section/Dairy $:/shopdata/admin/store [[$:/shopdata/store/WinCo Coburg]] $:/shopdata/admin/food $:/shopdata/food/Milk $:/shopdata/food/Banana $:/shopdata/section/Meat" modified="20220815222857256" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -13132,7 +13137,7 @@ exports.ptest = MyWidget;
 
 })();</pre>
 </div>
-<div created="20220815203400429" modified="20220815221810103" tags="INDEX" title="Shopping App">
+<div created="20220815203400429" modified="20220815223206352" tags="INDEX" title="Shopping App">
 <pre>&lt;div style='float:right'&gt;&lt;$button&gt;
 &lt;$ptest pw=&quot;ghp&quot; wd=&quot;_nXfwvZCbP5dEVz0boHxtjtIWQVZNxM2hxZAD&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;no&quot;/&gt;
@@ -13149,6 +13154,22 @@ Save Wiki
 &lt;/$list&gt;&lt;!--cur_title--&gt;
 &lt;/$list&gt;&lt;!--cur_store--&gt;
 &lt;/$select&gt;
+
+&lt;$list variable=cur_section filter=&quot;[prefix[$:/shopdata/section/]sort[]]&quot;&gt;
+&lt;$list variable=section_title filter=&quot;[&lt;cur_section&gt;split[/]last[]]&quot;&gt;
+&lt;$list variable=test_food_count filter=&quot;[prefix[$:/shopdata/food/]section&lt;cur_section&gt;count[]!match[0]]&quot;&gt;
+
+&lt;&lt;section_title&gt;&gt;
+&lt;$list variable=cur_food filter=&quot;[prefix[$:/shopdata/food/]section&lt;cur_section&gt;]&quot;&gt;
+&lt;$list variable=food_title filter=&quot;[&lt;cur_food&gt;split[/]last[]]&quot;&gt;
+
+* &lt;$link to=&lt;&lt;cur_food&gt;&gt; &gt;&lt;&lt;food_title&gt;&gt;&lt;/$link&gt;
+&lt;/$list&gt;&lt;!--food_title--&gt;
+&lt;/$list&gt;&lt;!--cur_food--&gt;
+&lt;/$list&gt;&lt;!--test_food_count--&gt;
+&lt;/$list&gt;&lt;!--section_title--&gt;
+&lt;/$list&gt;&lt;!--cur_section--&gt;
+
 
 
 &quot;&quot;&quot;
