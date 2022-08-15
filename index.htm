@@ -317,13 +317,33 @@ Error message and password prompt
 
 <li>$:/positivesigner/user-guide/view_template/UserForm Summary</li>
 
-<li>$:/shopdata/admin/stores</li>
+<li>$:/shopdata/admin/food</li>
+
+<li>$:/shopdata/admin/section</li>
+
+<li>$:/shopdata/admin/store</li>
+
+<li>$:/shopdata/admin/template</li>
+
+<li>$:/shopdata/food/Apple</li>
+
+<li>$:/shopdata/food/Banana</li>
+
+<li>$:/shopdata/food/Milk</li>
+
+<li>$:/shopdata/section/Dairy</li>
+
+<li>$:/shopdata/section/Produce</li>
 
 <li>$:/shopdata/selection/store</li>
 
-<li>$:/shopdata/store/WinCoBarger</li>
+<li>$:/shopdata/store/WinCo Barger</li>
 
 <li>$:/shopdata/store/WinCoCoburg</li>
+
+<li>$:/shopdata/template/admin</li>
+
+<li>$:/shopdata/template/food</li>
 
 <li>$:/SiteSubtitle</li>
 
@@ -12341,22 +12361,78 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 </pre>
 </div>
-<div caption="Stores table" created="20220815204613309" modified="20220815204935326" tags="" title="$:/shopdata/admin/stores">
+<div created="20220815214043219" modified="20220815220320716" tags="" title="$:/shopdata/admin/food">
+<pre></pre>
+</div>
+<div created="20220815213804193" modified="20220815220314315" tags="" title="$:/shopdata/admin/section">
+<pre></pre>
+</div>
+<div created="20220815204613309" modified="20220815220155246" tags="" title="$:/shopdata/admin/store">
 <pre>&lt;$list variable=cur_card filter=&quot;[prefix[$:/shopdata/store/]sort[]]&quot;&gt;
 &lt;$list variable=cur_caption filter=&quot;[&lt;cur_card&gt;get[text]]&quot;&gt;
+
 &lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;cur_caption&gt;&gt;&lt;/$link&gt;
 &lt;/$list&gt;&lt;!--cur_caption--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 </pre>
 </div>
+<div created="20220815215257767" modified="20220815220224477" tags="" title="$:/shopdata/admin/template">
+<pre></pre>
+</div>
+<div created="20220815214121156" modified="20220815214347858" section="$:/shopdata/section/produce" tags="" title="$:/shopdata/food/Apple">
+<pre>&lt;$select field=&quot;section&quot;&gt;
+&lt;$list filter='[prefix[$:/shopdata/section/]sort[title]]'&gt;
+&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field='text'/&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+</pre>
+</div>
+<div created="20220815214310429" modified="20220815220254356" section="$:/shopdata/section/Produce" tags="" title="$:/shopdata/food/Banana">
+<pre></pre>
+</div>
+<div created="20220815214329563" modified="20220815220244726" section="$:/shopdata/section/Dairy" tags="" title="$:/shopdata/food/Milk">
+<pre></pre>
+</div>
+<div created="20220815213905339" modified="20220815214543422" tags="" title="$:/shopdata/section/Dairy">
+<pre></pre>
+</div>
+<div created="20220815213841017" modified="20220815214555393" tags="" title="$:/shopdata/section/Produce">
+<pre></pre>
+</div>
 <div created="20220815204044719" modified="20220815204044719" title="$:/shopdata/selection/store">
 <pre>$:/shopdata/store/WinCoBarger</pre>
 </div>
-<div created="20220815203809007" modified="20220815203902957" tags="" title="$:/shopdata/store/WinCoBarger">
-<pre>WinCo Barger</pre>
+<div created="20220815203809007" modified="20220815220136764" tags="" title="$:/shopdata/store/WinCo Barger">
+<pre></pre>
 </div>
-<div created="20220815210004712" modified="20220815210025193" tags="" title="$:/shopdata/store/WinCoCoburg">
-<pre>WinCo Coburg</pre>
+<div created="20220815214001030" modified="20220815220145427" tags="" title="$:/shopdata/store/WinCoCoburg">
+<pre></pre>
+</div>
+<div created="20220815215406742" list-after="$:/core/ui/ViewTemplate/body" modified="20220815220353320" tags="$:/tags/ViewTemplate" title="$:/shopdata/template/admin">
+<pre>&lt;$list variable=cur_card filter=&quot;[all[current]prefix[$:/shopdata/admin/]sort[]]&quot;&gt;
+&lt;$list variable=cur_group filter=&quot;[&lt;cur_card&gt;split[/]last[]addprefix[$:/shopdata/]addsuffix[/]]&quot;&gt;
+&lt;$list variable=cur_entry filter=&quot;[prefix&lt;cur_group&gt;sort[]]&quot;&gt;
+&lt;$list variable=cur_caption filter=&quot;[&lt;cur_entry&gt;split[/]last[]]&quot;&gt;
+
+&lt;$link to=&lt;&lt;cur_entry&gt;&gt; &gt;&lt;&lt;cur_caption&gt;&gt;&lt;/$link&gt;
+&lt;/$list&gt;&lt;!--cur_caption--&gt;
+&lt;/$list&gt;&lt;!--cur_entry--&gt;
+&lt;/$list&gt;&lt;!--cur_group--&gt;
+&lt;/$list&gt;&lt;!--cur_card--&gt;
+</pre>
+</div>
+<div created="20220815214906908" list-after="$:/core/ui/ViewTemplate/body" modified="20220815215347157" tags="$:/tags/ViewTemplate" title="$:/shopdata/template/food">
+<pre>&lt;$list variable=cur_card filter=&quot;[all[current]prefix[$:/shopdata/food/]]&quot;&gt;
+Section
+&lt;$select field=&quot;section&quot;&gt;
+&lt;$list variable=cur_section filter='[prefix[$:/shopdata/section/]sort[title]]'&gt;
+&lt;$list variable=cur_title filter='[&lt;cur_section&gt;split[/]last[]]'&gt;
+&lt;option value=&lt;&lt;cur_section&gt;&gt;&gt;&lt;&lt;cur_title&gt;&gt;&lt;/option&gt;
+&lt;/$list&gt;&lt;!--cur_title--&gt;
+&lt;/$list&gt;&lt;!--cur_section--&gt;
+&lt;/$select&gt;
+&lt;/$list&gt;&lt;!--cur_card--&gt;
+</pre>
 </div>
 <div created="20210307044138767" modified="20210521004004821" title="$:/SiteSubtitle">
 <pre>Input</pre>
@@ -12370,7 +12446,7 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210411090905404" modified="20220803032022534" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210307044348911" modified="20220815210028257" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20220815220412409" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12385,13 +12461,13 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20220815210028258" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20220815220412410" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220815205943017" list="[[Shopping App]] Administration $:/shopdata/admin/stores $:/shopdata/store/WinCoBarger $:/shopdata/store/WinCoCoburg" modified="20220815205956456" title="$:/StoryList">
+<div created="20220815203508578" list="[[Shopping App]] Administration" modified="20220815220348143" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -12528,9 +12604,10 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 \end
 </pre>
 </div>
-<div created="20220815204529985" modified="20220815204903327" tags="" title="Administration">
+<div created="20220815204529985" modified="20220815220112286" tags="" title="Administration">
 <pre>&lt;$list variable=cur_card filter=&quot;[prefix[$:/shopdata/admin/]sort[]]&quot;&gt;
-&lt;$list variable=cur_caption filter=&quot;[&lt;cur_card&gt;get[caption]]&quot;&gt;
+&lt;$list variable=cur_caption filter=&quot;[&lt;cur_card&gt;split[/]last[]]&quot;&gt;
+
 &lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;cur_caption&gt;&gt;&lt;/$link&gt;
 &lt;/$list&gt;&lt;!--cur_caption--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
