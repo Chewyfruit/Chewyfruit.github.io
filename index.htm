@@ -331,6 +331,8 @@ Error message and password prompt
 
 <li>$:/shopdata/audit/food</li>
 
+<li>$:/shopdata/audit/route</li>
+
 <li>$:/shopdata/food/Apple</li>
 
 <li>$:/shopdata/food/Banana</li>
@@ -340,6 +342,12 @@ Error message and password prompt
 <li>$:/shopdata/route/WinCo Barger-e1</li>
 
 <li>$:/shopdata/route/WinCo Barger-e2</li>
+
+<li>$:/shopdata/route/WinCo Coburg-e1</li>
+
+<li>$:/shopdata/route/WinCo Coburg-e2</li>
+
+<li>$:/shopdata/route/WinCo Coburg-e3</li>
 
 <li>$:/shopdata/section/Dairy</li>
 
@@ -12381,14 +12389,8 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20220815214043219" modified="20220815220320716" tags="" title="$:/shopdata/admin/food">
 <pre></pre>
 </div>
-<div created="20220815224149489" modified="20220815224153314" tags="" title="$:/shopdata/admin/route">
-<pre>&lt;$list variable=cur_card filter=&quot;[prefix[$:/shopdata/store/]sort[]]&quot;&gt;
-&lt;$list variable=cur_caption filter=&quot;[&lt;cur_card&gt;get[text]]&quot;&gt;
-
-&lt;$link to=&lt;&lt;cur_card&gt;&gt; &gt;&lt;&lt;cur_caption&gt;&gt;&lt;/$link&gt;
-&lt;/$list&gt;&lt;!--cur_caption--&gt;
-&lt;/$list&gt;&lt;!--cur_card--&gt;
-</pre>
+<div created="20220815224149489" modified="20220815230211001" tags="" title="$:/shopdata/admin/route">
+<pre></pre>
 </div>
 <div created="20220815213804193" modified="20220815220645201" tags="" title="$:/shopdata/admin/section">
 <pre></pre>
@@ -12416,6 +12418,20 @@ Invalid section [&lt;&lt;cur_section&gt;&gt;]: &lt;$link to=&lt;&lt;cur_food&gt;
 &lt;/$list&gt;&lt;!--cur_food--&gt;
 </pre>
 </div>
+<div created="20220815224416425" modified="20220815230000519" tags="" title="$:/shopdata/audit/route">
+<pre>&lt;$list variable=&quot;cur_store&quot; filter=&quot;[prefix[$:/shopdata/store/]sort[]]&quot;&gt;
+&lt;$list variable=&quot;store_title&quot; filter=&quot;[&lt;cur_store&gt;split[/]last[]]&quot;&gt;
+&lt;$list variable=&quot;cur_section&quot; filter=&quot;[prefix[$:/shopdata/section/]sort[]]&quot;&gt;
+&lt;$list variable=&quot;route_filter&quot; filter=&quot;[&lt;store_title&gt;addprefix[$:/shopdata/route/]addsuffix[-]]&quot;&gt;
+&lt;$list variable=&quot;missing_route&quot; filter=&quot;[prefix&lt;route_filter&gt;get[section]match&lt;cur_section&gt;count[]match[0]]&quot;&gt;
+
+Store [&lt;&lt;store_title&gt;&gt;] missing route stop at section [&lt;&lt;cur_section&gt;&gt;]: [[$:/shopdata/admin/route]]
+&lt;/$list&gt;&lt;!--missing_route--&gt;
+&lt;/$list&gt;&lt;!--cur_section--&gt;
+&lt;/$list&gt;&lt;!--store_title--&gt;
+&lt;/$list&gt;&lt;!--cur_store--&gt;
+</pre>
+</div>
 <div created="20220815214121156" modified="20220815221521822" section="$:/shopdata/section/Produced" tags="" title="$:/shopdata/food/Apple">
 <pre></pre>
 </div>
@@ -12429,6 +12445,15 @@ Invalid section [&lt;&lt;cur_section&gt;&gt;]: &lt;$link to=&lt;&lt;cur_food&gt;
 <pre></pre>
 </div>
 <div created="20220815223955527" modified="20220815224026375" section="$:/shopdata/section/Meat" store="$:/shopdata/route/WinCo" tags="" title="$:/shopdata/route/WinCo Barger-e2">
+<pre></pre>
+</div>
+<div created="20220815230028004" modified="20220815230033731" section="$:/shopdata/section/Dairy" store="$:/shopdata/route/WinCo" tags="" title="$:/shopdata/route/WinCo Coburg-e1">
+<pre></pre>
+</div>
+<div created="20220815230037769" modified="20220815230053025" section="$:/shopdata/section/Produce" store="$:/shopdata/route/WinCo" tags="" title="$:/shopdata/route/WinCo Coburg-e2">
+<pre></pre>
+</div>
+<div created="20220815230043183" modified="20220815230047208" section="$:/shopdata/section/Meat" store="$:/shopdata/route/WinCo" tags="" title="$:/shopdata/route/WinCo Coburg-e3">
 <pre></pre>
 </div>
 <div created="20220815213905339" modified="20220815214543422" tags="" title="$:/shopdata/section/Dairy">
@@ -12500,7 +12525,7 @@ Section
 <div created="20210411090905404" modified="20220803032022534" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210307044348911" modified="20220815224300651" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20220815230251588" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12515,13 +12540,13 @@ Section
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20220815224300651" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20220815230251588" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220815223541336" list="[[Shopping App]] Administration $:/shopdata/admin/template $:/shopdata/template/food $:/shopdata/admin/section $:/shopdata/section/Dairy $:/shopdata/admin/store [[$:/shopdata/route/WinCo Barger-e1]] [[$:/shopdata/route/WinCo Barger-e2]] $:/shopdata/admin/route $:/shopdata/template/route" modified="20220815224221551" title="$:/StoryList">
+<div created="20220815223541336" list="[[Shopping App]] Administration $:/shopdata/admin/audit $:/shopdata/audit/food $:/shopdata/admin/template $:/shopdata/template/food $:/shopdata/admin/section $:/shopdata/section/Dairy $:/shopdata/admin/store [[$:/shopdata/route/WinCo Barger-e1]] [[$:/shopdata/route/WinCo Barger-e2]] $:/shopdata/admin/route $:/shopdata/template/route $:/shopdata/audit/route [[$:/shopdata/route/WinCo Coburg-e1]] [[$:/shopdata/route/WinCo Coburg-e2]] [[$:/shopdata/route/WinCo Coburg-e3]]" modified="20220815224413622" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
