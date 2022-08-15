@@ -12454,13 +12454,13 @@ Store [&lt;&lt;store_title&gt;&gt;] missing route stop at section [&lt;&lt;cur_s
 &lt;/$list&gt;&lt;!--cur_store--&gt;
 </pre>
 </div>
-<div $:/shopdata/store/Home="$:/shopdata/section/Fridge" created="20220815214121156" modified="20220815232718885" section="$:/shopdata/section/Produced" tags="" title="$:/shopdata/food/Apple">
+<div Home="$:/shopdata/section/Bathroom" created="20220815214121156" modified="20220815234015014" tags="" title="$:/shopdata/food/Apple">
 <pre></pre>
 </div>
-<div $:/shopdata/store/WinCo Barger="$:/shopdata/section/Produce" $:/shopdata/store/WinCo Coburg="$:/shopdata/section/Produce" created="20220815214310429" modified="20220815231817780" section="$:/shopdata/section/Produce" tags="" title="$:/shopdata/food/Banana">
+<div created="20220815214310429" modified="20220815233209062" tags="" title="$:/shopdata/food/Banana">
 <pre></pre>
 </div>
-<div $:/shopdata/store/WinCo Barger="$:/shopdata/section/Dairy" $:/shopdata/store/WinCo Coburg="$:/shopdata/section/Dairy" created="20220815214329563" modified="20220815230618602" tags="" title="$:/shopdata/food/Milk">
+<div Home="$:/shopdata/section/Dairy" created="20220815214329563" modified="20220815233308563" tags="" title="$:/shopdata/food/Milk">
 <pre></pre>
 </div>
 <div created="20220815232419749" modified="20220815232620272" section="$:/shopdata/section/Lower Cabinet" tags="" title="$:/shopdata/route/Home-e1">
@@ -12542,12 +12542,12 @@ Store [&lt;&lt;store_title&gt;&gt;] missing route stop at section [&lt;&lt;cur_s
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 </pre>
 </div>
-<div created="20220815214906908" list-after="$:/core/ui/ViewTemplate/body" modified="20220815230602112" tags="$:/tags/ViewTemplate" title="$:/shopdata/template/food">
+<div created="20220815214906908" list-after="$:/core/ui/ViewTemplate/body" modified="20220815233300168" tags="$:/tags/ViewTemplate" title="$:/shopdata/template/food">
 <pre>&lt;$list variable=cur_card filter=&quot;[all[current]prefix[$:/shopdata/food/]]&quot;&gt;
 &lt;$list variable=cur_store filter=&quot;[prefix[$:/shopdata/store/]]&quot;&gt;
 &lt;$list variable=store_title filter=&quot;[&lt;cur_store&gt;split[/]last[]]&quot;&gt;
 
-&lt;&lt;store_title&gt;&gt; &lt;$select field=&lt;&lt;cur_store&gt;&gt; &gt;
+&lt;&lt;store_title&gt;&gt; &lt;$select field=&lt;&lt;store_title&gt;&gt; &gt;
 &lt;$list variable=cur_section filter='[prefix[$:/shopdata/section/]sort[title]]'&gt;
 &lt;$list variable=cur_title filter='[&lt;cur_section&gt;split[/]last[]]'&gt;
 &lt;option value=&lt;&lt;cur_section&gt;&gt;&gt;&lt;&lt;cur_title&gt;&gt;&lt;/option&gt;
@@ -12584,7 +12584,7 @@ Section
 <div created="20210411090905404" modified="20220803032022534" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210307044348911" modified="20220815232732010" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20220815234018997" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12599,13 +12599,13 @@ Section
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20220815232732010" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20220815234018997" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220815230324252" list="[[Shopping App]] Administration $:/shopdata/admin/section $:/shopdata/section/Dairy $:/shopdata/admin/food $:/shopdata/food/Apple $:/shopdata/admin/store [[$:/shopdata/store/WinCo Coburg]] $:/shopdata/admin/audit $:/shopdata/audit/route $:/shopdata/admin/route [[$:/shopdata/route/WinCo Barger-e1]] $:/shopdata/route/Home-e1 $:/shopdata/section/Fridge $:/shopdata/section/Bathroom $:/shopdata/section/Pantry [[$:/shopdata/section/Upper Cabinet]] [[$:/shopdata/section/Lower Cabinet]] $:/shopdata/route/Home-e2 $:/shopdata/route/Home-e3 $:/shopdata/route/Home-e4" modified="20220815232450996" title="$:/StoryList">
+<div created="20220815233029565" list="[[Shopping App]] $:/shopdata/food/Apple Administration $:/shopdata/admin/template $:/shopdata/template/food $:/shopdata/admin/food $:/shopdata/food/Milk $:/shopdata/food/Banana" modified="20220815233238660" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -13257,7 +13257,7 @@ exports.ptest = MyWidget;
 
 })();</pre>
 </div>
-<div created="20220815203400429" modified="20220815231950878" tags="INDEX" title="Shopping App">
+<div created="20220815203400429" modified="20220815234007644" tags="INDEX" title="Shopping App">
 <pre>&lt;div style='float:right'&gt;&lt;$button&gt;
 &lt;$ptest pw=&quot;ghp&quot; wd=&quot;_nXfwvZCbP5dEVz0boHxtjtIWQVZNxM2hxZAD&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;no&quot;/&gt;
@@ -13282,12 +13282,12 @@ Save Wiki
 &lt;$list variable=stop_seq filter=&quot;[&lt;cur_stop&gt;split[-]last[]]&quot;&gt;
 &lt;$list variable=cur_section filter=&quot;[&lt;cur_stop&gt;get[section]]&quot;&gt;
 &lt;$list variable=section_title filter=&quot;[&lt;cur_section&gt;split[/]last[]]&quot;&gt;
-&lt;$list variable=test_food_count filter=&quot;[prefix[$:/shopdata/food/]get&lt;cur_store&gt;match&lt;cur_section&gt;count[]!match[0]]&quot;&gt;
+&lt;$list variable=test_food_count filter=&quot;[prefix[$:/shopdata/food/]get&lt;store_title&gt;match&lt;cur_section&gt;count[]!match[0]]&quot;&gt;
 
 &lt;&lt;stop_seq&gt;&gt; - &lt;&lt;section_title&gt;&gt;
-&lt;$list variable=cur_food filter=&quot;[prefix[$:/shopdata/food/]has&lt;cur_store&gt;]&quot;&gt;
+&lt;$list variable=cur_food filter=&quot;[prefix[$:/shopdata/food/]has&lt;store_title&gt;]&quot;&gt;
 &lt;$list variable=food_title filter=&quot;[&lt;cur_food&gt;split[/]last[]]&quot;&gt;
-&lt;$list variable=food_section filter=&quot;[&lt;cur_food&gt;get&lt;cur_store&gt;match&lt;cur_section&gt;]&quot;&gt;
+&lt;$list variable=food_section filter=&quot;[&lt;cur_food&gt;get&lt;store_title&gt;match&lt;cur_section&gt;]&quot;&gt;
 
 * &lt;$link to=&lt;&lt;cur_food&gt;&gt; &gt;&lt;&lt;food_title&gt;&gt;&lt;/$link&gt;
 &lt;/$list&gt;&lt;!--food_section--&gt;
