@@ -12438,7 +12438,7 @@ Store [&lt;&lt;store_title&gt;&gt;] missing route stop at section [&lt;&lt;cur_s
 <div created="20220815214310429" modified="20220815220254356" section="$:/shopdata/section/Produce" tags="" title="$:/shopdata/food/Banana">
 <pre></pre>
 </div>
-<div created="20220815214329563" modified="20220815220244726" section="$:/shopdata/section/Dairy" tags="" title="$:/shopdata/food/Milk">
+<div $:/shopdata/store/WinCo Barger="$:/shopdata/section/Dairy" $:/shopdata/store/WinCo Coburg="$:/shopdata/section/Dairy" created="20220815214329563" modified="20220815230618602" tags="" title="$:/shopdata/food/Milk">
 <pre></pre>
 </div>
 <div created="20220815223838036" modified="20220815224019378" section="$:/shopdata/section/Produce" store="$:/shopdata/route/WinCo" tags="" title="$:/shopdata/route/WinCo Barger-e1">
@@ -12487,16 +12487,20 @@ Store [&lt;&lt;store_title&gt;&gt;] missing route stop at section [&lt;&lt;cur_s
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 </pre>
 </div>
-<div created="20220815214906908" list-after="$:/core/ui/ViewTemplate/body" modified="20220815215347157" tags="$:/tags/ViewTemplate" title="$:/shopdata/template/food">
+<div created="20220815214906908" list-after="$:/core/ui/ViewTemplate/body" modified="20220815230602112" tags="$:/tags/ViewTemplate" title="$:/shopdata/template/food">
 <pre>&lt;$list variable=cur_card filter=&quot;[all[current]prefix[$:/shopdata/food/]]&quot;&gt;
-Section
-&lt;$select field=&quot;section&quot;&gt;
+&lt;$list variable=cur_store filter=&quot;[prefix[$:/shopdata/store/]]&quot;&gt;
+&lt;$list variable=store_title filter=&quot;[&lt;cur_store&gt;split[/]last[]]&quot;&gt;
+
+&lt;&lt;store_title&gt;&gt; &lt;$select field=&lt;&lt;cur_store&gt;&gt; &gt;
 &lt;$list variable=cur_section filter='[prefix[$:/shopdata/section/]sort[title]]'&gt;
 &lt;$list variable=cur_title filter='[&lt;cur_section&gt;split[/]last[]]'&gt;
 &lt;option value=&lt;&lt;cur_section&gt;&gt;&gt;&lt;&lt;cur_title&gt;&gt;&lt;/option&gt;
 &lt;/$list&gt;&lt;!--cur_title--&gt;
 &lt;/$list&gt;&lt;!--cur_section--&gt;
 &lt;/$select&gt;
+&lt;/$list&gt;&lt;!--store_title--&gt;
+&lt;/$list&gt;&lt;!--cur_store--&gt;
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 </pre>
 </div>
@@ -12525,7 +12529,7 @@ Section
 <div created="20210411090905404" modified="20220803032022534" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210307044348911" modified="20220815230251588" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20220815231015333" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12540,13 +12544,13 @@ Section
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20220815230251588" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20220815231015333" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220815223541336" list="[[Shopping App]] Administration $:/shopdata/admin/audit $:/shopdata/audit/food $:/shopdata/admin/template $:/shopdata/template/food $:/shopdata/admin/section $:/shopdata/section/Dairy $:/shopdata/admin/store [[$:/shopdata/route/WinCo Barger-e1]] [[$:/shopdata/route/WinCo Barger-e2]] $:/shopdata/admin/route $:/shopdata/template/route $:/shopdata/audit/route [[$:/shopdata/route/WinCo Coburg-e1]] [[$:/shopdata/route/WinCo Coburg-e2]] [[$:/shopdata/route/WinCo Coburg-e3]]" modified="20220815224413622" title="$:/StoryList">
+<div created="20220815230324252" list="[[Shopping App]] Administration $:/shopdata/admin/food $:/shopdata/food/Milk $:/shopdata/template/food" modified="20220815230336910" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -13198,7 +13202,7 @@ exports.ptest = MyWidget;
 
 })();</pre>
 </div>
-<div created="20220815203400429" modified="20220815223206352" tags="INDEX" title="Shopping App">
+<div created="20220815203400429" modified="20220815231003304" tags="INDEX" title="Shopping App">
 <pre>&lt;div style='float:right'&gt;&lt;$button&gt;
 &lt;$ptest pw=&quot;ghp&quot; wd=&quot;_nXfwvZCbP5dEVz0boHxtjtIWQVZNxM2hxZAD&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;no&quot;/&gt;
@@ -13216,20 +13220,24 @@ Save Wiki
 &lt;/$list&gt;&lt;!--cur_store--&gt;
 &lt;/$select&gt;
 
+&lt;$list variable=cur_store filter='[[$:/shopdata/selection/store]get[text]]'&gt;
 &lt;$list variable=cur_section filter=&quot;[prefix[$:/shopdata/section/]sort[]]&quot;&gt;
 &lt;$list variable=section_title filter=&quot;[&lt;cur_section&gt;split[/]last[]]&quot;&gt;
-&lt;$list variable=test_food_count filter=&quot;[prefix[$:/shopdata/food/]section&lt;cur_section&gt;count[]!match[0]]&quot;&gt;
+&lt;$list variable=test_food_count filter=&quot;[prefix[$:/shopdata/food/]get&lt;cur_store&gt;match&lt;cur_section&gt;count[]!match[0]]&quot;&gt;
 
 &lt;&lt;section_title&gt;&gt;
-&lt;$list variable=cur_food filter=&quot;[prefix[$:/shopdata/food/]section&lt;cur_section&gt;]&quot;&gt;
+&lt;$list variable=cur_food filter=&quot;[prefix[$:/shopdata/food/]has&lt;cur_store&gt;]&quot;&gt;
 &lt;$list variable=food_title filter=&quot;[&lt;cur_food&gt;split[/]last[]]&quot;&gt;
+&lt;$list variable=food_section filter=&quot;[&lt;cur_food&gt;get&lt;cur_store&gt;match&lt;cur_section&gt;]&quot;&gt;
 
 * &lt;$link to=&lt;&lt;cur_food&gt;&gt; &gt;&lt;&lt;food_title&gt;&gt;&lt;/$link&gt;
+&lt;/$list&gt;&lt;!--food_section--&gt;
 &lt;/$list&gt;&lt;!--food_title--&gt;
 &lt;/$list&gt;&lt;!--cur_food--&gt;
 &lt;/$list&gt;&lt;!--test_food_count--&gt;
 &lt;/$list&gt;&lt;!--section_title--&gt;
 &lt;/$list&gt;&lt;!--cur_section--&gt;
+&lt;/$list&gt;&lt;!--cur_store--&gt;
 
 
 
