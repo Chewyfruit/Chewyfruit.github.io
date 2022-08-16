@@ -12639,7 +12639,7 @@ Section
 <div created="20210411090905404" modified="20220803032022534" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210307044348911" modified="20220816000242656" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20220816000650849" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12654,7 +12654,7 @@ Section
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20220816000242656" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20220816000650849" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
@@ -13312,7 +13312,7 @@ exports.ptest = MyWidget;
 
 })();</pre>
 </div>
-<div created="20220815203400429" modified="20220816000135776" tags="INDEX" title="Shopping App">
+<div created="20220815203400429" modified="20220816000645666" tags="INDEX" title="Shopping App">
 <pre>&lt;div style='float:right'&gt;&lt;$button&gt;
 &lt;$ptest pw=&quot;ghp&quot; wd=&quot;_nXfwvZCbP5dEVz0boHxtjtIWQVZNxM2hxZAD&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;no&quot;/&gt;
@@ -13341,12 +13341,14 @@ Save Wiki
 &lt;$list variable=test_food_count filter=&quot;[prefix&lt;aisle_filter&gt;section&lt;cur_section&gt;count[]!match[0]]&quot;&gt;
 
 &lt;&lt;stop_seq&gt;&gt; - &lt;&lt;section_title&gt;&gt;
-&lt;$list variable=cur_food filter=&quot;[prefix&lt;aisle_filter&gt;section&lt;cur_section&gt;]&quot;&gt;
-&lt;$list variable=food_title filter=&quot;[&lt;cur_food&gt;split[-]last[]]&quot;&gt;
+&lt;$list variable=cur_aisle filter=&quot;[prefix&lt;aisle_filter&gt;section&lt;cur_section&gt;]&quot;&gt;
+&lt;$list variable=food_title filter=&quot;[&lt;cur_aisle&gt;split[-]last[]]&quot;&gt;
+&lt;$list variable=cur_food filter=&quot;[&lt;food_title&gt;addprefix[$:/shopdata/food/]]&quot;&gt;
 
 * &lt;$link to=&lt;&lt;cur_food&gt;&gt; &gt;&lt;&lt;food_title&gt;&gt;&lt;/$link&gt;
-&lt;/$list&gt;&lt;!--food_title--&gt;
 &lt;/$list&gt;&lt;!--cur_food--&gt;
+&lt;/$list&gt;&lt;!--food_title--&gt;
+&lt;/$list&gt;&lt;!--cur_aisle--&gt;
 &lt;/$list&gt;&lt;!--test_food_count--&gt;
 &lt;/$list&gt;&lt;!--aisle_filter--&gt;
 &lt;/$list&gt;&lt;!--section_title--&gt;
