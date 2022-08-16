@@ -331,6 +331,8 @@ Error message and password prompt
 
 <li>$:/shopdata/admin/template</li>
 
+<li>$:/shopdata/aisle/Home-Apple</li>
+
 <li>$:/shopdata/audit/food</li>
 
 <li>$:/shopdata/audit/route</li>
@@ -12434,6 +12436,9 @@ variable=activity_prevcount filter=&quot;[suffix&lt;userform_suffix&gt;!match&lt
 <div created="20220815215257767" modified="20220815220224477" tags="" title="$:/shopdata/admin/template">
 <pre></pre>
 </div>
+<div created="20220815235430975" modified="20220815235820197" section="$:/shopdata/section/Fridge" title="$:/shopdata/aisle/Home-Apple">
+<pre></pre>
+</div>
 <div created="20220815220659927" modified="20220815221550331" tags="" title="$:/shopdata/audit/food">
 <pre>&lt;$list variable=&quot;cur_food&quot; filter=&quot;[prefix[$:/shopdata/food/]sort[]]&quot;&gt;
 &lt;$list variable=&quot;cur_section&quot; filter=&quot;[&lt;cur_food&gt;get[section]]&quot;&gt;
@@ -12522,8 +12527,8 @@ Store [&lt;&lt;store_title&gt;&gt;] missing route stop at section [&lt;&lt;cur_s
 <div created="20220815232533658" modified="20220815232557996" tags="" title="$:/shopdata/section/Upper Cabinet">
 <pre></pre>
 </div>
-<div created="20220815204044719" modified="20220815234141585" title="$:/shopdata/selection/store">
-<pre>$:/shopdata/store/WinCo Coburg</pre>
+<div created="20220815204044719" modified="20220815235424225" title="$:/shopdata/selection/store">
+<pre>$:/shopdata/store/Home</pre>
 </div>
 <div created="20220815232407934" modified="20220815232410478" tags="" title="$:/shopdata/store/Home">
 <pre></pre>
@@ -12547,7 +12552,7 @@ Store [&lt;&lt;store_title&gt;&gt;] missing route stop at section [&lt;&lt;cur_s
 &lt;/$list&gt;&lt;!--cur_card--&gt;
 </pre>
 </div>
-<div created="20220815214906908" list-after="$:/core/ui/ViewTemplate/body" modified="20220815235401229" tags="$:/tags/ViewTemplate" title="$:/shopdata/template/food">
+<div created="20220815214906908" list-after="$:/core/ui/ViewTemplate/body" modified="20220815235952235" tags="$:/tags/ViewTemplate" title="$:/shopdata/template/food">
 <pre>&lt;$list variable=cur_card filter=&quot;[all[current]prefix[$:/shopdata/food/]]&quot;&gt;
 &lt;$list variable=food_title filter=&quot;[&lt;cur_card&gt;split[/]last[]]&quot;&gt;
 &lt;$list variable=cur_store filter=&quot;[prefix[$:/shopdata/store/]]&quot;&gt;
@@ -12555,7 +12560,7 @@ Store [&lt;&lt;store_title&gt;&gt;] missing route stop at section [&lt;&lt;cur_s
 &lt;$list variable=route_filter filter=&quot;[[$:/shopdata/route/]addsuffix&lt;store_title&gt;addsuffix[-]]&quot;&gt;
 &lt;$list variable=aisle_card filter=&quot;[[$:/shopdata/aisle/]addsuffix&lt;store_title&gt;addsuffix[-]addsuffix&lt;food_title&gt;]&quot;&gt;
 
-&lt;&lt;store_title&gt;&gt; &lt;$select tiddler=&lt;&lt;aisle_card&gt;&gt; &gt;
+&lt;&lt;store_title&gt;&gt; &lt;$select tiddler=&lt;&lt;aisle_card&gt;&gt; field=&quot;section&quot; &gt;
 &lt;$list variable=cur_section filter='[prefix&lt;route_filter&gt;get[section]sort[title]]'&gt;
 &lt;$list variable=section_title filter='[&lt;cur_section&gt;split[/]last[]]'&gt;
 &lt;option value=&lt;&lt;cur_section&gt;&gt;&gt;&lt;&lt;section_title&gt;&gt;&lt;/option&gt;
@@ -12594,7 +12599,7 @@ Section
 <div created="20210411090905404" modified="20220803032022534" tags="$:/positivesigner/preview-button" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210307044348911" modified="20220815235413077" title="$:/state/sidebar">
+<div created="20210307044348911" modified="20220816000139535" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210307044725895" modified="20210307044725895" title="$:/state/tab--1963855381">
@@ -12609,13 +12614,13 @@ Section
 <div created="20210307045410888" modified="20210411032805480" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210307044348912" modified="20220815235413077" title="$:/state/tab/sidebar--595412856">
+<div created="20210307044348912" modified="20220816000139535" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20220815234249932" list="[[Shopping App]] Administration $:/shopdata/admin/template $:/shopdata/template/food $:/shopdata/admin/route $:/shopdata/admin/food $:/shopdata/food/Apple $:/shopdata/admin/aisle" modified="20220815234751870" title="$:/StoryList">
+<div created="20220815234249932" list="[[Shopping App]] Administration $:/shopdata/admin/template $:/shopdata/template/food $:/shopdata/admin/route $:/shopdata/admin/food $:/shopdata/food/Apple $:/shopdata/admin/aisle $:/shopdata/aisle/Home-Apple" modified="20220815235801599" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -13267,7 +13272,7 @@ exports.ptest = MyWidget;
 
 })();</pre>
 </div>
-<div created="20220815203400429" modified="20220815234007644" tags="INDEX" title="Shopping App">
+<div created="20220815203400429" modified="20220816000135776" tags="INDEX" title="Shopping App">
 <pre>&lt;div style='float:right'&gt;&lt;$button&gt;
 &lt;$ptest pw=&quot;ghp&quot; wd=&quot;_nXfwvZCbP5dEVz0boHxtjtIWQVZNxM2hxZAD&quot;/&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; text=&quot;no&quot;/&gt;
@@ -13292,18 +13297,18 @@ Save Wiki
 &lt;$list variable=stop_seq filter=&quot;[&lt;cur_stop&gt;split[-]last[]]&quot;&gt;
 &lt;$list variable=cur_section filter=&quot;[&lt;cur_stop&gt;get[section]]&quot;&gt;
 &lt;$list variable=section_title filter=&quot;[&lt;cur_section&gt;split[/]last[]]&quot;&gt;
-&lt;$list variable=test_food_count filter=&quot;[prefix[$:/shopdata/food/]get&lt;store_title&gt;match&lt;cur_section&gt;count[]!match[0]]&quot;&gt;
+&lt;$list variable=aisle_filter filter=&quot;[[$:/shopdata/aisle/]addsuffix&lt;store_title&gt;sort[]]&quot;&gt;
+&lt;$list variable=test_food_count filter=&quot;[prefix&lt;aisle_filter&gt;section&lt;cur_section&gt;count[]!match[0]]&quot;&gt;
 
 &lt;&lt;stop_seq&gt;&gt; - &lt;&lt;section_title&gt;&gt;
-&lt;$list variable=cur_food filter=&quot;[prefix[$:/shopdata/food/]has&lt;store_title&gt;]&quot;&gt;
-&lt;$list variable=food_title filter=&quot;[&lt;cur_food&gt;split[/]last[]]&quot;&gt;
-&lt;$list variable=food_section filter=&quot;[&lt;cur_food&gt;get&lt;store_title&gt;match&lt;cur_section&gt;]&quot;&gt;
+&lt;$list variable=cur_food filter=&quot;[prefix&lt;aisle_filter&gt;section&lt;cur_section&gt;]&quot;&gt;
+&lt;$list variable=food_title filter=&quot;[&lt;cur_food&gt;split[-]last[]]&quot;&gt;
 
 * &lt;$link to=&lt;&lt;cur_food&gt;&gt; &gt;&lt;&lt;food_title&gt;&gt;&lt;/$link&gt;
-&lt;/$list&gt;&lt;!--food_section--&gt;
 &lt;/$list&gt;&lt;!--food_title--&gt;
 &lt;/$list&gt;&lt;!--cur_food--&gt;
 &lt;/$list&gt;&lt;!--test_food_count--&gt;
+&lt;/$list&gt;&lt;!--aisle_filter--&gt;
 &lt;/$list&gt;&lt;!--section_title--&gt;
 &lt;/$list&gt;&lt;!--cur_section--&gt;
 &lt;/$list&gt;&lt;!--stop_seq--&gt;
